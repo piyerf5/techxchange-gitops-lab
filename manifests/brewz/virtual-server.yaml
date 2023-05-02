@@ -76,7 +76,6 @@ spec:
             headers:
               - name: x-debug-original-status
                 value: ${upstream_status}
-...
     - path: /api
       policies:
         - name: rate-limit-policy
@@ -92,4 +91,3 @@ spec:
             headers:
               - name: x-debug-original-status
                 value: ${upstream_status}
-...
