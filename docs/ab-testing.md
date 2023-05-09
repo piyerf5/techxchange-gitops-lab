@@ -10,7 +10,7 @@ The development team has already been hard at work updating the Brewz SPA app wi
 
 We need to deploy the new variant of the SPA application, so we can conditionally route traffic to it.
 
-1. In your fork of the lab repository, append the following yaml snippet to the `manifests/brewz/app.yaml` file and save it:
+1. In Visual Studio Code, append the following yaml snippet to the `manifests/brewz/app.yaml` file and save it:
 
     ```yaml
     ---
@@ -79,8 +79,6 @@ We need to deploy the new variant of the SPA application, so we can conditionall
 
 1. Commit the `manifests/brewz/virtual-server.yaml` and `manifests/brewz/app.yaml` files to your local repository, then push them to your remote repository. ArgoCD will pick up the most recent changes, and deploy them for you.
 
-    > **Note:** In the lab environment, at times ArgoCD may not immediately detect and deploy the changes. If this is the case, click the **Refresh** button on the **brewz** application in ArgoCD.
-
 1. In your browser, open your tab where the Brewz application (`https://brewz-<your namespace>.labs.f5demos.com`) is loaded. Refresh the browser. Note that the application looks the same as it was when deployed.
 
 1. Duplicate this tab, and open the browser's developer tools.
@@ -90,5 +88,7 @@ We need to deploy the new variant of the SPA application, so we can conditionall
     <img src="assets/chrome-cookie.png" alt="Cookie view in Chrome Developer Tools panel" width="600"/>
 
 1. Refresh the browser tab. You should see a different design for the Brewz application, notably that the background and font colors are different.
+
+  > ***Note:*** If you don't see the change, you may need to hard-refresh the page in Chrome to invalidate the cached resources.
 
 [Continue to the lab conclusion...](conclusion.md)
