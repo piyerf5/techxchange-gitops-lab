@@ -7,7 +7,7 @@ spec:
   project: default
   source:
     path: manifests/brewz
-    repoURL: https://github.com/piyerf5/techxchange-gitops-lab.git
+    repoURL: https://github.com//techxchange-gitops-lab.git
     targetRevision: HEAD
   destination:
     namespace: p-iyer

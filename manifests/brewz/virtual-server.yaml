@@ -14,9 +14,6 @@ spec:
     - name: api
       service: api
       port: 8000
-    - name: spa-dark
-      service: spa-dark
-      port: 80
       healthCheck:
         enable: true
         path: /api/stats
@@ -34,32 +31,13 @@ spec:
       port: 8003
   routes:
     - path: /
-      matches:
-        - conditions:
-          - cookie: "app_version"
-            value: "dark"
-          action:
-            pass: spa-dark
       action:
         pass: spa
-
-      action:
-        pass: spa
-    - paath: /api
+    - path: /api
       policies:
         - name: rate-limit-policy
       action:
         pass: api
-      errorPages:
-        - codes: [404]
-          return:
-            code: 404
-            type: application/json
-            body: |
-              {\"msg\": \"Could not find the resource!\"}
-            headers:
-              - name: x-debug-original-status
-                value: ${upstream_status}
     - path: /api/inventory
       action:
         proxy:
